@@ -8,7 +8,7 @@ This directory is a static GitHub Pages site for the InfiMed-ORBIT paper.
 2. Push this repository with the `docs/` directory.
 3. In GitHub, open `Settings -> Pages`.
 4. Set the source to `Deploy from a branch`, choose the main branch, and set the folder to `/docs`.
-5. The expected project URL is `https://pengkai.github.io/InfiMed-ORBIT/`.
+5. The expected project URL is `https://pidneuralode.github.io/ORBIT/`.
 
 ## Update Links
 
