@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="InfiMed-ORBIT aligns LLMs on open-ended medical dialogue with rubric-based incremental training."
+    />
+    <meta property="og:title" content="InfiMed-ORBIT" />
+    <meta
+      property="og:description"
+      content="Rubric-based incremental training for open-ended, high-stakes medical dialogue."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pengkai.github.io/InfiMed-ORBIT/" />
+    <meta property="og:image" content="static/assets/orbit-pipeline-1.png" />
+    <title>InfiMed-ORBIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,650;8..60,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <main class="page" id="top">
+      <section class="hero">
+        <h1><span>InfiMed-</span><span>ORBIT</span></h1>
+        <p class="subtitle">
+          Aligning LLMs on Open-Ended Complex Tasks via Rubric-Based Incremental Training
+        </p>
+
+        <p class="authors">
+          Pengkai Wang<sup>*</sup>, Pengwei Liu<sup>*</sup>, Qi Zuo<sup>*</sup>,
+          Zhijie Sang, Congkai Xie, Hongxia Yang<sup>†</sup>
+        </p>
+        <p class="affiliations">
+          The Hong Kong Polytechnic University · InfiX.ai · Ant Group · Zhejiang University
+        </p>
+        <p class="notes"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author.</p>
+
+        <nav class="link-row" aria-label="Project links">
+          <a href="https://arxiv.org/abs/2510.15859">Paper</a>
+          <span>Code Coming Soon</span>
+          <span>Data Coming Soon</span>
+        </nav>
+
+        <div class="highlights" aria-label="Key results">
+          <div><strong>7.0 → 27.5</strong><span>HealthBench-Hard</span></div>
+          <div><strong>2k</strong><span>training samples</span></div>
+          <div><strong class="single-line">Consistent Judges</strong></div>
+        </div>
+      </section>
+
+      <figure class="hero-figure">
+        <img
+          src="static/assets/orbit-pipeline-1.png"
+          alt="ORBIT pipeline showing dialogue construction, rubric-guided reinforcement learning, and retrieval-augmented rubric generation."
+        />
+        <figcaption>
+          ORBIT constructs case-specific rubrics from expert seeds and uses criterion-level feedback
+          to guide incremental reinforcement learning.
+        </figcaption>
+      </figure>
+
+      <section class="section" id="overview">
+        <h2>Overview</h2>
+        <p>
+          Reinforcement learning has driven recent breakthroughs in large language models, but it is
+          still difficult to apply reliably to open-ended medical dialogue, where feedback is
+          ambiguous, context-dependent, and hard to collapse into a single scalar reward. ORBIT
+          addresses this challenge with a rubric-based incremental training framework that uses
+          retrieval-augmented, case-specific rubrics as adaptive guides for reinforcement learning.
+        </p>
+        <p>
+          Applied to Qwen3-4B-Instruct, ORBIT improves HealthBench-Hard performance from 7.0 to 27.5
+          using only 2k training samples, achieving state-of-the-art performance among
+          comparable-size open-source models. Larger rubric sets remain competitive with strong
+          open-source baselines, while judge agreement and rubric-quality analyses stress-test the
+          reliability of the reward signal.
+        </p>
+      </section>
+
+      <section class="section" id="results">
+        <h2>Main Results</h2>
+        <p>
+          The headline HealthBench-Hard comparison uses GPT-4.1 for evaluation. ORBIT is positioned
+          as a compact-model post-training method: it does not rely on proprietary model scale, but
+          instead improves the reward structure used during alignment.
+        </p>
+        <figure>
+          <img
+            src="static/assets/performance-compare-1.png"
+            alt="HealthBench-Hard benchmark comparison between InfiMed-ORBIT and proprietary or open-source baselines."
+          />
+          <figcaption>
+            Benchmark comparison on HealthBench-Hard, highlighting ORBIT's gains among
+            comparable-size open-source models.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section" id="dynamics">
+        <h2>Training Dynamics</h2>
+        <p>
+          Scaling training data and filtering training examples play different roles. Larger rubric
+          pools raise the performance ceiling, while difficulty-aware pruning improves sample
+          efficiency by focusing optimization on informative cases and constraints.
+        </p>
+        <figure>
+          <img
+            src="static/assets/training-dynamics-1.png"
+            alt="Training dynamics showing the effect of data scaling and difficulty-aware filtering."
+          />
+        </figure>
+      </section>
+
+      <section class="section" id="trust">
+        <h2>Judge Model Consistency</h2>
+        <p>
+          We evaluate whether different judge models produce consistent rubric-based scores. On a
+          fixed set of RAG-generated rubrics, six LLM judges are compared against a GPT-4.1 anchor,
+          providing a direct check that the development-time evaluator is calibrated with the
+          headline evaluation protocol.
+        </p>
+        <figure>
+          <img
+            src="static/assets/judge-rubric-panel-1.png"
+            alt="Judge reliability and rubric quality panel with judge agreement, judge sweep, and rubric templatedness."
+          />
+          <figcaption>
+            Judge-model consistency analysis compares GPT-4.1, GPT-OSS, and Qwen-family judges on
+            the same rubric-evaluation cases.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section" id="resources">
+        <h2>Resources</h2>
+        <p>
+          The project page is the stable entry point for the paper and upcoming open-source
+          release. Code and data links will be updated here once the release package is finalized.
+        </p>
+        <div class="resource-grid">
+          <div>
+            <strong>Paper</strong>
+            <a href="https://arxiv.org/abs/2510.15859">arXiv:2510.15859</a>
+          </div>
+          <div>
+            <strong>Code</strong>
+            <span>Coming Soon</span>
+          </div>
+          <div>
+            <strong>Data</strong>
+            <span>Coming Soon</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section citation" id="citation">
+        <h2>Citation</h2>
+        <pre><code id="bibtex">@misc{wang2025infimedorbitaligningllmsopenended,
+      title={InfiMed-ORBIT: Aligning LLMs on Open-Ended Complex Tasks via Rubric-Based Incremental Training},
+      author={Pengkai Wang and Pengwei Liu and Qi Zuo and Zhijie Sang and Congkai Xie and Hongxia Yang},
+      year={2025},
+      eprint={2510.15859},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2510.15859},
+}</code></pre>
+        <button class="copy-button" type="button" data-copy-target="bibtex">Copy BibTeX</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        InfiMed-ORBIT ·
+        <a href="https://arxiv.org/abs/2510.15859">arXiv</a> ·
+        <a href="#top">Back to top</a>
+      </p>
+    </footer>
+
+    <script>
+      const copyButton = document.querySelector("[data-copy-target='bibtex']");
+      copyButton?.addEventListener("click", async () => {
+        const bibtex = document.getElementById("bibtex")?.innerText ?? "";
+        await navigator.clipboard.writeText(bibtex);
+        copyButton.textContent = "Copied";
+        setTimeout(() => {
+          copyButton.textContent = "Copy BibTeX";
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
