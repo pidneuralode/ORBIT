@@ -1,0 +1,12 @@
+{
+  "extends": "../training.json",
+  "variant": "stochastic_review",
+  "scoring": {
+    "normalization_policy": "signed_fallback",
+    "criteria_policy": "boolean_only"
+  },
+  "training": {
+    "trainer.experiment_name": "stochastic_review",
+    "reward_model.launch_reward_fn_async": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "status": "synthetic_example",
+  "scoring": {
+    "max_workers": 1,
+    "failure_policy": "raise"
+  }
+}

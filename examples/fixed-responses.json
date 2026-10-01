@@ -1,0 +1,24 @@
+[
+  {
+    "sample_id": "synthetic-1",
+    "solution_str": "BLUE",
+    "extra_info": {
+      "prompt_history": [
+        {
+          "role": "user",
+          "content": "Return BLUE"
+        }
+      ],
+      "rubrics": [
+        {
+          "criterion": "Contains BLUE",
+          "points": 2
+        },
+        {
+          "criterion": "Contains RED",
+          "points": -1
+        }
+      ]
+    }
+  }
+]

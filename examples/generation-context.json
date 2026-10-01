@@ -1,0 +1,6 @@
+{
+  "query": "Synthetic dialogue",
+  "top_cases_text": "Synthetic references",
+  "candidate_rubrics_text": "Synthetic pool",
+  "query_id": "synthetic-train-1"
+}

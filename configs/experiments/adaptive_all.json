@@ -1,0 +1,13 @@
+{
+  "extends": "../training.json",
+  "variant": "adaptive_all",
+  "judge": {
+    "max_concurrency": 300
+  },
+  "scoring": {
+    "max_workers": 300
+  },
+  "training": {
+    "trainer.experiment_name": "adaptive_all"
+  }
+}

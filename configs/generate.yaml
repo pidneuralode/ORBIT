@@ -1,0 +1,5 @@
+extends: generation.json
+workflow:
+  command: generate
+  input: ${ORBIT_GENERATION_INPUT}
+  output: ${ORBIT_GENERATION_OUTPUT}

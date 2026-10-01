@@ -1,0 +1,7 @@
+{
+  "extends": "../generation.json",
+  "retrieval": {
+    "profile": "consensus",
+    "k_examples": 5
+  }
+}

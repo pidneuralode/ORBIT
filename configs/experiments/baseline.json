@@ -1,0 +1,6 @@
+{
+  "extends": "../training.json",
+  "training": {
+    "trainer.experiment_name": "baseline"
+  }
+}

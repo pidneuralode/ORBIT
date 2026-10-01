@@ -1,0 +1,44 @@
+{
+  "judge": {
+    "base_url": "${ORBIT_JUDGE_BASE_URL}",
+    "model": "${ORBIT_JUDGE_MODEL}"
+  },
+  "training": {
+    "data.train_files": "${ORBIT_TRAIN_FILE}",
+    "data.val_files": "${ORBIT_VAL_FILE}",
+    "data.prompt_key": "prompt",
+    "data.truncation": "left",
+    "data.max_prompt_length": 4096,
+    "data.max_response_length": 8192,
+    "data.gen_batch_size": 128,
+    "data.train_batch_size": 64,
+    "actor_rollout_ref.model.path": "${ORBIT_MODEL_PATH}",
+    "actor_rollout_ref.rollout.n": 8,
+    "actor_rollout_ref.rollout.name": "vllm",
+    "actor_rollout_ref.rollout.temperature": 1.0,
+    "actor_rollout_ref.rollout.top_p": 0.95,
+    "actor_rollout_ref.rollout.top_k": -1,
+    "actor_rollout_ref.rollout.tensor_model_parallel_size": 1,
+    "actor_rollout_ref.actor.ppo_mini_batch_size": 64,
+    "actor_rollout_ref.actor.optim.lr": 1e-06,
+    "actor_rollout_ref.actor.clip_ratio_low": 0.2,
+    "actor_rollout_ref.actor.clip_ratio_high": 0.28,
+    "actor_rollout_ref.actor.loss_agg_mode": "token-mean",
+    "algorithm.adv_estimator": "grpo",
+    "algorithm.filter_groups.enable": true,
+    "algorithm.filter_groups.metric": "acc",
+    "algorithm.filter_groups.max_num_gen_batches": 10,
+    "reward_model.overlong_buffer.enable": true,
+    "reward_model.overlong_buffer.len": 4096,
+    "reward_model.overlong_buffer.penalty_factor": 1.0,
+    "trainer.logger": [
+      "console"
+    ],
+    "trainer.project_name": "ORBIT",
+    "trainer.n_gpus_per_node": 2,
+    "trainer.nnodes": 1,
+    "trainer.total_epochs": 16,
+    "trainer.default_local_dir": "${ORBIT_OUTPUT_DIR}",
+    "trainer.resume_mode": "disable"
+  }
+}

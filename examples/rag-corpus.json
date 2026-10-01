@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "prompt_id": "synthetic-case",
+      "content": "Synthetic reference"
+    }
+  ],
+  "rubrics": [
+    {
+      "rubric_id": "synthetic-rubric",
+      "prompt_id": "synthetic-case",
+      "content": "Describe evidence",
+      "points": 8
+    }
+  ]
+}

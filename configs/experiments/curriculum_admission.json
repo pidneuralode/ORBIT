@@ -1,0 +1,12 @@
+{
+  "extends": "../training.json",
+  "variant": "curriculum_admission",
+  "scoring": {
+    "normalization_policy": "signed_fallback",
+    "criteria_policy": "boolean_only"
+  },
+  "training": {
+    "trainer.experiment_name": "curriculum_admission",
+    "reward_model.launch_reward_fn_async": false
+  }
+}

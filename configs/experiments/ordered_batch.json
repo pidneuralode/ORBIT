@@ -1,0 +1,10 @@
+{
+  "variant": "ordered_batch",
+  "judge": {
+    "base_url": "${ORBIT_JUDGE_BASE_URL}",
+    "model": "${ORBIT_JUDGE_MODEL}"
+  },
+  "scoring": {
+    "mode": "ordered_batch"
+  }
+}

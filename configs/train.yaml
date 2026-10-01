@@ -1,0 +1,6 @@
+extends: training.json
+variant: baseline
+workflow:
+  command: train
+training:
+  trainer.experiment_name: baseline

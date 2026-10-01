@@ -1,0 +1,25 @@
+This source tree includes a modified snapshot of verl.
+
+Upstream: https://github.com/volcengine/verl
+Recovered upstream revision: 313366fd85e95ad43d567a808dd647089723a255
+License: Apache License 2.0, retained in vendor/verl/LICENSE.
+Original per-file copyright and license notices are retained. The snapshot also
+contains recovered research changes and ORBIT reward registration, checkpoint
+and runtime-environment integration changes; it is not an untouched upstream
+checkout. Reward-manager code moved from this snapshot retains its notices.
+
+The ORBIT item-grading prompt contains material from OpenAI's HealthBench
+reference implementation in simple-evals (Copyright (c) 2024 OpenAI).
+Its MIT license is retained in docs/licenses/simple-evals-MIT.txt.
+The complete evaluation runner is an optional, separately obtained reference;
+its license also remains in the fetched checkout. Benchmark data is not bundled.
+See docs/EVALUATION.md for the pinned source and metric boundary.
+
+Author-owned ORBIT code uses the MIT license in LICENSE. The five recovered
+reward-manager implementations in src/orbit/rubrics_rl/managers retain their
+upstream Apache notices and Apache 2.0 licensing; original ORBIT helper code
+is covered by the root MIT license. The full third-party license texts in
+docs/licenses are included in source distributions and wheels.
+
+The code license does not grant rights to private research data, generated
+datasets or model weights. Those artifacts require independent rights review.

@@ -1,0 +1,12 @@
+{
+  "data_source": "synthetic-review-only",
+  "prompt": [{"role": "user", "content": "Return the word BLUE."}],
+  "solution_str": "BLUE",
+  "extra_info": {
+    "prompt_history": [{"role": "user", "content": "Return the word BLUE."}],
+    "rubrics": [
+      {"criterion": "Contains the word BLUE", "points": 2},
+      {"criterion": "Contains the word RED", "points": -1}
+    ]
+  }
+}

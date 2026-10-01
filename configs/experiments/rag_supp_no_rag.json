@@ -1,0 +1,6 @@
+{
+  "extends": "../generation.json",
+  "retrieval": {
+    "profile": "supp_no_rag"
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "criteria_met": true,
+    "explanation": "synthetic fixture"
+  },
+  {
+    "criteria_met": false,
+    "explanation": "synthetic fixture"
+  }
+]

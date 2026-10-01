@@ -1,0 +1,33 @@
+[
+  {
+    "prompt": [
+      {
+        "role": "user",
+        "content": "Return the word example. Synthetic split: val."
+      }
+    ],
+    "data_source": "synthetic",
+    "reward_model": {
+      "style": "rule",
+      "ground_truth": "example"
+    },
+    "extra_info": {
+      "query_id": "synthetic-val-1",
+      "prompt_history": [
+        {
+          "role": "user",
+          "content": "Return the word example. Synthetic split: val."
+        }
+      ],
+      "rubrics": [
+        {
+          "criterion": "The answer contains example.",
+          "points": 1.0
+        }
+      ],
+      "sorted_rubric_indices": [
+        0
+      ]
+    }
+  }
+]

@@ -1,0 +1,6 @@
+variant: generation
+status: synthetic_example
+workflow:
+  command: generate
+  input: ../examples/generation-context.json
+  recorded: ../examples/recorded-generation.json
