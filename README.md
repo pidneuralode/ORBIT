@@ -2,9 +2,15 @@
 
 **Open-ended rubric-based incremental training** for medical dialogue.
 
+[Paper](https://arxiv.org/abs/2510.15859) · [Quick start](#installation-and-first-run)
+
 ORBIT constructs case-specific criteria from expert-written rubric seeds, judges policy responses against those criteria, and uses the resulting rewards for reinforcement learning. Positive criteria identify desired actions; negative criteria identify mistakes to penalize. This makes the feedback explicit at the level of clinical decisions rather than relying solely on a holistic response score.
 
-This repository focuses on the executable core: rubric generation and retrieval, response scoring, curriculum strategies, prepared-data interfaces, fixed-response evaluation, and integration with verl. Research plotting, paper-specific statistical analyses, figures, annotation data and result artifacts are outside its scope. Historical dialogue simulation and final dataset selection are not reconstructed here, and GPU experiment reproduction has not been established.
+This repository focuses on the executable core: rubric generation and retrieval, response scoring, curriculum strategies, prepared-data interfaces, fixed-response evaluation, and integration with verl. Selected figures from the public paper and project page illustrate the method and reported results below. Research plotting code, paper-specific statistical analyses, raw annotation data and result files are outside the code release. Historical dialogue simulation and final dataset selection are not reconstructed here, and GPU experiment reproduction has not been established.
+
+![ORBIT framework: dialogue construction, rubric-guided reinforcement learning, and retrieval-augmented rubric generation](https://raw.githubusercontent.com/pidneuralode/ORBIT/main/docs/static/assets/orbit-pipeline-1.png)
+
+*Paper overview: construct dialogue queries, generate case-specific rubrics, and use criterion-level feedback to guide reinforcement learning. The data-construction stages shown in the figure describe the research pipeline; their historical implementation is not reconstructed in this code release.*
 
 ## Core workflow
 
@@ -12,6 +18,12 @@ This repository focuses on the executable core: rubric generation and retrieval,
 2. **Prepare data.** Attach generated criteria to supplied dialogue records by query identity. Provide references, prompt history, disjoint train/validation identities and any curriculum ordering explicitly.
 3. **Score responses and train.** Judge each criterion against the dialogue and response. Aggregate signed rewards, optionally select criteria through a curriculum, and pass rewards to GRPO through the retained verl runtime.
 4. **Evaluate fixed responses.** Join supplied responses to prepared data, score them with the same engine, and optionally compare judge decisions. This interface does not perform policy inference.
+
+## Paper results
+
+![HealthBench-Hard comparison of ORBIT and baseline models across clinical themes and evaluation axes](https://raw.githubusercontent.com/pidneuralode/ORBIT/main/docs/static/assets/performance-compare-1.png)
+
+*Results reported in the [paper](https://arxiv.org/abs/2510.15859), grouped by clinical theme and evaluation axis. See the paper for the model, dataset and judge settings; these figures are not new reproduction results from this code release.*
 
 ## Repository layout
 
