@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 # A changed payload at these paths is rejected, not granted an artifact exemption.
 PUBLIC_SITE_SHA256 = {
     "docs/README.md": "284dc2294a02df1e8f1597206e4e369706330cbe0478bf9fa11a2a14e073a00f",
-    "docs/index.html": "f54438c36a4d2e07ab04e42d2114be9b9850df5e609f21811a213cb054b48fe2",
+    "docs/index.html": "0eebe71df639b52e9ee95fdf96858b17796f2bbb9da84c52483bc07095fc932f",
     "docs/static/assets/judge-rubric-panel-1.png": "2c7a36a3c2f92c6d751d682083490c4dbf77d5cb0b383006a34932c2c0b33f24",
     "docs/static/assets/orbit-performance-1.png": "ec1ef54194562fb656adb3daa7990371366e97f6d77af873e3d392da158ce885",
     "docs/static/assets/orbit-pipeline-1.png": "424fed5e6a827f591927ed519f0d6f3a3d0d88c64c70571c8fdf9e0ec397e5d3",
