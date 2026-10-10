@@ -1,8 +1,9 @@
 # ORBIT
 > **Open-ended rubric-based incremental training** for medical dialogue.
 
-[![arXiv](https://img.shields.io/badge/arXiv-2511.01678-b31b1b.svg)](https://arxiv.org/abs/2510.15859) · [Quick start](#installation-and-first-run)
+Accepted by [ICML 2026](https://icml.cc/virtual/2026/poster/60554)
 
+[![arXiv](https://img.shields.io/badge/arXiv-2511.01678-b31b1b.svg)](https://arxiv.org/abs/2510.15859) · [Quick start](#installation-and-first-run)
 ---
 
 ORBIT constructs case-specific criteria from expert-written rubric seeds, judges policy responses against those criteria, and uses the resulting rewards for reinforcement learning. Positive criteria identify desired actions; negative criteria identify mistakes to penalize. This makes the feedback explicit at the level of clinical decisions rather than relying solely on a holistic response score.
